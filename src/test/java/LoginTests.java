@@ -24,7 +24,7 @@ public class LoginTests extends AppiumConfig {
     public void loginSuccessModel() {
         boolean res = new SplashScreen(driver)
                 .goToAuthenticationScreen()
-                .login(Auth.builder().email("bobinsan20@yandex.ru").password("Bob12345@").build())
+                .login(Auth.builder().email("bobinsan21@yandex.ru").password("Bob12345@").build())
                 .isContactListActivityPresent();
         Assert.assertTrue(res);
     }
@@ -32,7 +32,7 @@ public class LoginTests extends AppiumConfig {
     @AfterMethod
     public void postCondition() {
         if (new ContactListScreen(driver).isContactListActivityPresent()) {
-            new ContactListScreen(driver).logOut();
+            new ContactListScreen(driver).logout();
             new SplashScreen(driver);
         }
     }
